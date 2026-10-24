@@ -134,7 +134,7 @@ export default function EmployeeRegisterShiftPage() {
       {base.error && <Alert>{base.error}</Alert>}
 
       {base.data && groups.length === 0 ? (
-        <Card className="p-6">
+        <Card className="p-4 sm:p-6">
           <EmptyState>Bạn chưa được gán vào nhóm ca nào. Vui lòng liên hệ trưởng cửa hàng hoặc quản lý.</EmptyState>
         </Card>
       ) : (

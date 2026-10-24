@@ -186,7 +186,7 @@ export default function CuaHangPage() {
   );
 
   return (
-    <div className="p-6 space-y-6 max-w-7xl mx-auto">
+    <div className="mx-auto max-w-7xl space-y-4 p-4 sm:space-y-6 sm:p-6">
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
           <h1 className="text-2xl font-black text-slate-800 tracking-tight">
@@ -340,7 +340,7 @@ export default function CuaHangPage() {
       )}
       {storeFormOpen ? (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/40 p-4">
-          <form onSubmit={saveStore} className="w-full max-w-lg rounded-2xl bg-white p-6 shadow-xl space-y-4">
+          <form onSubmit={saveStore} className="max-h-[92dvh] w-full max-w-lg overflow-y-auto rounded-2xl bg-white p-4 sm:p-6 shadow-xl space-y-4">
             <div className="flex items-center justify-between"><h2 className="text-lg font-black text-slate-800">{editingStore ? "Sửa cửa hàng" : "Thêm cửa hàng"}</h2><button type="button" onClick={closeStoreForm} className="text-slate-400 text-xl">×</button></div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {([["storeCode", "Mã cửa hàng"], ["storeName", "Tên cửa hàng"], ["address", "Địa chỉ"], ["phone", "Số điện thoại"], ["note", "Ghi chú"]] as const).map(([field, label]) => <label key={field} className="text-xs font-bold text-slate-600">{label}<input required={field === "storeCode" || field === "storeName"} value={storeForm[field] ?? ""} onChange={(event) => setStoreForm({ ...storeForm, [field]: event.target.value })} className="mt-1 w-full rounded-xl border border-slate-200 px-3 py-2 font-normal" /></label>)}
@@ -434,7 +434,7 @@ function StoreDetailModal({
             <X className="h-4 w-4" />
           </button>
         </div>
-        <div className="space-y-5 p-6">
+        <div className="space-y-5 p-4 sm:p-6">
           <div className="flex items-start justify-between gap-3">
             <div>
               <h2 className="text-xl font-black text-slate-800">{text(store.storeName)}</h2>
