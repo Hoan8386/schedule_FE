@@ -71,7 +71,7 @@ export default function EmployeeRegisterShiftPage() {
   const inPeriod = useCallback((dayKey: string) => Boolean(range && dayKey >= range.from && dayKey <= range.to), [range]);
   const cellOf = useCallback(
     (row: TemplateRow, dayKey: string) =>
-      cellFor(row, dayKey, todayKey, inPeriod(dayKey), windows.get(row.group.shiftGroupId) ?? { open: false, note: "" }, byKey),
+      cellFor(row, dayKey, todayKey, inPeriod, windows.get(row.group.shiftGroupId) ?? { open: false, note: "" }, byKey),
     [todayKey, inPeriod, windows, byKey]
   );
 
